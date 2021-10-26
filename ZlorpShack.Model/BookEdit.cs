@@ -9,6 +9,7 @@ namespace ZlorpShack.Model
 {
     public class BookEdit
     {
+        public int BookID { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]

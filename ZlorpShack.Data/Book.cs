@@ -20,11 +20,11 @@ namespace ZlorpShack.Data
         public string Genre { get; set; }
 
         public string Summary { get; set; }
-        
-        //[ForeignKey(nameof (Student))]
-        //public int StudentID { get; set; }
+
+        [ForeignKey(nameof(Student))]
+        public int StudentID { get; set; }
 
         //Navigation Property
-        //public virtual Student Student { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

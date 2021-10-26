@@ -61,5 +61,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZlorpShack.Data\ZlorpShack.Data.csproj">
+      <Project>{9B951AF3-7E66-4105-BBD9-1F273DC89C7C}</Project>
+      <Name>ZlorpShack.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZlorpShack.Model\ZlorpShack.Model.csproj">
+      <Project>{687F7970-224E-4EF1-B131-69E34D68D4C9}</Project>
+      <Name>ZlorpShack.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
