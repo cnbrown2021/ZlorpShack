@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZlorpShack.Service
 {
-    class BookService
+    public class BookService
     {
     }
 }
