@@ -13,6 +13,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using ZlorpShack.Data;
 using ZlorpShack.WebAPI.Models;
 using ZlorpShack.WebAPI.Providers;
 using ZlorpShack.WebAPI.Results;

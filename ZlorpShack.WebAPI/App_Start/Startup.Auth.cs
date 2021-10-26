@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ZlorpShack.WebAPI.Providers;
 using ZlorpShack.WebAPI.Models;
+using ZlorpShack.Data;
 
 namespace ZlorpShack.WebAPI
 {
