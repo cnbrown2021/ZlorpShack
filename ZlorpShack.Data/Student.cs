@@ -11,14 +11,17 @@ namespace ZlorpShack.Data
     {
         [Key]
         public int StudentId { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
-        [Required]
+        
         public string FullName { get; set; }
-        [Required]
+        
         public int Age { get; set; }
-        [Required]
+       
         public int Grade { get; set; }
+        [Required]
         public int NumberOfBooksRead { get; set; }
         public int CurrentRewardTier { get; set; }
         public virtual string ListOfBooks { get; set; }

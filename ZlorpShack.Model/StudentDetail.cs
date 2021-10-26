@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ZlorpShack.Model
 {
-    class StudentDetail
+    public class StudentDetail
     {
+        public int StudentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int NumberOfBooksRead { get; set; }
+        public int CurrentRewardTier { get; set; }
+
     }
 }
