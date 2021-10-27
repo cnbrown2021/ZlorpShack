@@ -11,6 +11,7 @@ namespace ZlorpShack.Model
 {
     public class AwardEarnedEdit
     {
+        public int AwardEarnedId { get; set; }
         public DateTime DateEarned { get; set; }
         public DateTime DateClaimed { get; set; }
 
@@ -20,10 +21,10 @@ namespace ZlorpShack.Model
         //Navigation Property
         public virtual Student Student { get; set; }
 
-        //[ForeignKey(nameof(Award))]
-        //public int AwardId { get; set; }
+        [ForeignKey(nameof(Award))]
+        public int AwardId { get; set; }
 
         //Navigation Property
-        //public virtual Award Award { get; set; }
+        public virtual Award Award { get; set; }
     }
 }
