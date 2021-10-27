@@ -84,7 +84,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="Award.cs" />
+
     <Compile Include="AwardEarned.cs" />
+
     <Compile Include="Book.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202110271750034_InitialMigration.cs" />
