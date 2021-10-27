@@ -10,12 +10,12 @@ namespace ZlorpShack.Service
 {
     public class AwardService
     {
-        private readonly Guid _userId;
+        //private readonly Guid _userId;
 
-        public AwardService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //public AwardService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
 
         public bool CreateAward(AwardCreate model)
         {
