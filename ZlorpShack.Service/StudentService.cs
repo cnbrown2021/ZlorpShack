@@ -8,9 +8,11 @@ using ZlorpShack.Model;
 
 namespace ZlorpShack.Service
 {
+    
     public class StudentService
     {
         private readonly int _studentId;
+        private readonly List<StudentList> _studentDirectory;
 
         public StudentService(int studentId)
         {
@@ -35,11 +37,64 @@ namespace ZlorpShack.Service
         }
 
         //Get
+        public List<StudentList> GetList()
+        {
+            return _studentDirectory;
+        }
+
+        //Get
+        public IEnumerable<StudentList> GetStudent()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Students
+                    .Where(c => c.StudentId == _studentId)
+                    .Select(c => new StudentList
+                    {
+                        StudentId = c.StudentId,
+                        FullName = c.FullName,
+                        NumberOfBooksRead = c.NumberOfBooksRead,
+                        CurrentRewardTier = c.NumberOfBooksRead
+                    });
+                   
+                return query.ToArray();
+            }
+        }
 
         //GetbyID
+        public StudentDetail GetStudentById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var content = ctx.Students.Single(c => c.StudentId == id);
+
+                return new StudentDetail
+                {
+                    StudentId = content.StudentId,
+                    FirstName = content.FirstName,
+                    LastName = content.LastName,
+                    NumberOfBooksRead = content.NumberOfBooksRead,
+                    CurrentRewardTier = content.CurrentRewardTier
+                };
+            }
+        }
 
         //Update
+        public bool UpdateStudent(StudentEdit profile)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var content = ctx.Students.Single(c => c.StudentId == profile.StudentId);
 
+                content.StudentId = profile.StudentId;
+                content.FirstName = profile.FirstName;
+                content.LastName = profile.LastName;
+                content.NumberOfBooksRead = profile.NumberOfBooksRead;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+       
         //Delete
         public bool DeleteStudent(int _studentId)
         {
