@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AwardEarnedCreate.cs" />
+    <Compile Include="AwardEarnedDetail.cs" />
+    <Compile Include="AwardEarnedEdit.cs" />
+    <Compile Include="AwardEarnedList.cs" />
     <Compile Include="BookCreate.cs" />
     <Compile Include="BookDetail.cs" />
     <Compile Include="BookEdit.cs" />

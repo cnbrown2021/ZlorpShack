@@ -8,23 +8,24 @@ using System.Threading.Tasks;
 
 namespace ZlorpShack.Data
 {
-    public class Book
+    public class AwardEarned
     {
         [Key]
-        public int BookID { get; set; }
+        public int AwardEarnedID { get; set; }
         [Required]
-        public string Title { get; set; }
-        [Required]
-        public string Author { get; set; }
-        [Required]
-        public string Genre { get; set; }
-
-        public string Summary { get; set; }
+        public DateTime DateEarned { get; set; }
+        public DateTime DateClaimed { get; set; }
 
         [ForeignKey(nameof(Student))]
         public int StudentId { get; set; }
 
         //Navigation Property
         public virtual Student Student { get; set; }
+
+        //[ForeignKey(nameof(Award))]
+        //public int AwardId { get; set; }
+
+        //Navigation Property
+        //public virtual Award Award { get; set; }
     }
 }

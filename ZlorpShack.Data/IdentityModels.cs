@@ -36,7 +36,7 @@ namespace ZlorpShack.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Book> Books { get; set; }
         //public DbSet<Award> Awards { get; set; }
-        //public DbSet<AwardEarned> AwardsEarned { get; set; }
+        public DbSet<AwardEarned> AwardsEarned { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
