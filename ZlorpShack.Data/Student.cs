@@ -24,6 +24,10 @@ namespace ZlorpShack.Data
         [Required]
         public int NumberOfBooksRead { get; set; }
         public int CurrentRewardTier { get; set; }
-        public virtual string ListOfBooks { get; set; }
+
+        //Navigation Property
+        public virtual Book Book { get; set; }
+
+
     }
 }
