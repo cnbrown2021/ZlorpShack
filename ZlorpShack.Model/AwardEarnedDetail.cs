@@ -9,7 +9,7 @@ using ZlorpShack.Data;
 
 namespace ZlorpShack.Model
 {
-    class AwardEarnedDetail
+    public class AwardEarnedDetail
     {
         [Key]
         public int AwardEarnedID { get; set; }

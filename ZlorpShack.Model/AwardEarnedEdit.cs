@@ -9,7 +9,7 @@ using ZlorpShack.Data;
 
 namespace ZlorpShack.Model
 {
-    class AwardEarnedEdit
+    public class AwardEarnedEdit
     {
         public DateTime DateEarned { get; set; }
         public DateTime DateClaimed { get; set; }

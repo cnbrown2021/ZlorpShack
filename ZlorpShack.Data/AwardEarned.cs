@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ZlorpShack.Data
 {
-    class AwardEarned
+    public class AwardEarned
     {
         [Key]
         public int AwardEarnedID { get; set; }
