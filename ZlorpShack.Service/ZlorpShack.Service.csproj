@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookService.cs" />
+    <Compile Include="AwardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZlorpShack.Data\ZlorpShack.Data.csproj">
+      <Project>{9b951af3-7e66-4105-bbd9-1f273dc89c7c}</Project>
+      <Name>ZlorpShack.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZlorpShack.Model\ZlorpShack.Model.csproj">
+      <Project>{687f7970-224e-4ef1-b131-69e34d68d4c9}</Project>
+      <Name>ZlorpShack.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

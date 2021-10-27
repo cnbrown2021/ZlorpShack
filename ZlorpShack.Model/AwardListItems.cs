@@ -4,30 +4,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ZlorpShack.Data.Award;
 
-namespace ZlorpShack.Data
+namespace ZlorpShack.Model
 {
-    public class Award
+    public class AwardListItems
     {
-        public enum Tiers
-        {
-            TierOne = 1,
-            TierTwo,
-            TierThree,
-            TierFour,
-            TierFive
-        }
-
-        [Key]
-        public int AwardId { get; set; }
-
-        [Required]
+        [Display(Name="First Prize")]
         public string AwardName { get; set; }
 
-        [Required]
+        [Display(Name="Award Tier")]
         public Tiers AwardTier { get; set; }
 
-        [Required]
+        [Display(Name="Award Description")]
         public string AwardDescription { get; set; }
     }
 }
