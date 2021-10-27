@@ -49,7 +49,6 @@ namespace ZlorpShack.Service
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.Students
-                    .Where(c => c.StudentId == _studentId)
                     .Select(c => new StudentList
                     {
                         StudentId = c.StudentId,
