@@ -56,7 +56,19 @@
   <ItemGroup>
     <Compile Include="AwardCreate.cs" />
     <Compile Include="AwardListItems.cs" />
+    <Compile Include="AwardEarnedCreate.cs" />
+    <Compile Include="AwardEarnedDetail.cs" />
+    <Compile Include="AwardEarnedEdit.cs" />
+    <Compile Include="AwardEarnedList.cs" />
+    <Compile Include="BookCreate.cs" />
+    <Compile Include="BookDetail.cs" />
+    <Compile Include="BookEdit.cs" />
+    <Compile Include="BookList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentCreate.cs" />
+    <Compile Include="StudentDetail.cs" />
+    <Compile Include="StudentEdit.cs" />
+    <Compile Include="StudentList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
