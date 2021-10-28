@@ -18,34 +18,46 @@ namespace ZlorpShack.WebAPI.Controllers
     public class StudentController : ApiController
     //CRUD
     {
-
+        private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
         private StudentService CreateStudentService()
         {
-            var userId = int.Parse(User.Identity.GetUserId());
-            StudentService studentService = new StudentService(userId);
+            //var studentId = Guid.Parse(User.Identity.GetUserId());
+            StudentService studentService = new StudentService();
             return studentService;
         }
 
         [HttpPost]
         public IHttpActionResult Post(StudentCreate student)
         {
+            if (student == null)
+                return BadRequest("Please Enter Information");
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateStudentService();
+            //var service = CreateStudentService();
 
-            if (!service.CreateStudent(student))
-                return InternalServerError();
+            //if (!service.CreateStudent(student))
+            //return InternalServerError();
 
-            return Ok();
+            //_studentId.Students.Add(student);
+            if(_studentId.SaveChanges() == 1)
+            {
+                return Ok($"{student.FirstName} was added.");
+            }
+            return InternalServerError();
+
+            //return Ok();
+
+
         }
 
         [HttpGet]
         public IHttpActionResult Get()
         {
-            StudentService studentService = CreateStudentService();
-            var student = studentService.GetStudent();
-            return Ok(student);
+            //StudentService studentService = CreateStudentService();
+            //var student = studentService.GetStudent();
+            return Ok(_studentId.Students.ToList());
         }
 
         [HttpGet]
@@ -53,12 +65,31 @@ namespace ZlorpShack.WebAPI.Controllers
         {
             StudentService studentService = CreateStudentService();
             var student = studentService.GetStudentById(id);
+            if(student == null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetByName(string name)
+        {
+            StudentService studentService = CreateStudentService();
+            var student = studentService.GetStudentByName(name);
+            if(student == null)
+            {
+                return NotFound();
+            }
             return Ok(student);
         }
 
         [HttpPut]
         public IHttpActionResult Put(StudentEdit student)
         {
+            if (student == null)
+                return BadRequest("More Information Needed");
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 

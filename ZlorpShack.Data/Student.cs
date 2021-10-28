@@ -16,7 +16,13 @@ namespace ZlorpShack.Data
         [Required]
         public string LastName { get; set; }
         
-        public string FullName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
         
         public int Age { get; set; }
        
