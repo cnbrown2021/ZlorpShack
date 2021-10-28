@@ -35,19 +35,19 @@ namespace ZlorpShack.WebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            //var service = CreateStudentService();
+            var service = CreateStudentService();
 
-            //if (!service.CreateStudent(student))
-            //return InternalServerError();
-
-            //_studentId.Students.Add(student);
-            if(_studentId.SaveChanges() == 1)
-            {
-                return Ok($"{student.FirstName} was added.");
-            }
+            if (!service.CreateStudent(student))
             return InternalServerError();
 
-            //return Ok();
+            //_studentId.Students.Add(student);
+            //if(_studentId.SaveChanges() == 1)
+            //{
+              //  return Ok($"{student.FirstName} was added.");
+            //}
+            //return InternalServerError();
+
+            return Ok();
 
 
         }
