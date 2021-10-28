@@ -8,19 +8,31 @@ namespace ZlorpShack.Data.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Book",
+                "dbo.Award",
                 c => new
                     {
-                        BookID = c.Int(nullable: false, identity: true),
-                        Title = c.String(nullable: false),
-                        Author = c.String(nullable: false),
-                        Genre = c.String(nullable: false),
-                        Summary = c.String(),
-                        StudentId = c.Int(nullable: false),
+                        AwardId = c.Int(nullable: false, identity: true),
+                        AwardName = c.String(nullable: false),
+                        AwardTier = c.Int(nullable: false),
+                        AwardDescription = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.BookID)
+                .PrimaryKey(t => t.AwardId);
+            
+            CreateTable(
+                "dbo.AwardEarned",
+                c => new
+                    {
+                        AwardEarnedId = c.Int(nullable: false, identity: true),
+                        DateEarned = c.DateTime(nullable: false),
+                        DateClaimed = c.DateTime(nullable: false),
+                        StudentId = c.Int(nullable: false),
+                        AwardId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.AwardEarnedId)
+                .ForeignKey("dbo.Award", t => t.AwardId, cascadeDelete: true)
                 .ForeignKey("dbo.Student", t => t.StudentId, cascadeDelete: true)
-                .Index(t => t.StudentId);
+                .Index(t => t.StudentId)
+                .Index(t => t.AwardId);
             
             CreateTable(
                 "dbo.Student",
@@ -34,9 +46,23 @@ namespace ZlorpShack.Data.Migrations
                         Grade = c.Int(nullable: false),
                         NumberOfBooksRead = c.Int(nullable: false),
                         CurrentRewardTier = c.Int(nullable: false),
-                        ListOfBooks = c.String(),
                     })
                 .PrimaryKey(t => t.StudentId);
+            
+            CreateTable(
+                "dbo.Book",
+                c => new
+                    {
+                        BookID = c.Int(nullable: false, identity: true),
+                        Title = c.String(nullable: false),
+                        Author = c.String(nullable: false),
+                        Genre = c.String(nullable: false),
+                        Summary = c.String(),
+                        StudentId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.BookID)
+                .ForeignKey("dbo.Student", t => t.StudentId, cascadeDelete: true)
+                .Index(t => t.StudentId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -117,18 +143,24 @@ namespace ZlorpShack.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.Book", "StudentId", "dbo.Student");
+            DropForeignKey("dbo.AwardEarned", "StudentId", "dbo.Student");
+            DropForeignKey("dbo.AwardEarned", "AwardId", "dbo.Award");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Book", new[] { "StudentId" });
+            DropIndex("dbo.AwardEarned", new[] { "AwardId" });
+            DropIndex("dbo.AwardEarned", new[] { "StudentId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Student");
             DropTable("dbo.Book");
+            DropTable("dbo.Student");
+            DropTable("dbo.AwardEarned");
+            DropTable("dbo.Award");
         }
     }
 }

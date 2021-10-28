@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AwardCreate.cs" />
+    <Compile Include="AwardDetail.cs" />
+    <Compile Include="AwardEdit.cs" />
     <Compile Include="AwardListItems.cs" />
     <Compile Include="AwardEarnedCreate.cs" />
     <Compile Include="AwardEarnedDetail.cs" />
