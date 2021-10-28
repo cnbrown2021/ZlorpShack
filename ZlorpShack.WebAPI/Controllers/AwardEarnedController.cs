@@ -15,7 +15,5 @@ namespace ZlorpShack.WebAPI.Controllers
             var aeService = new AwardEarnedService();
             return aeService;
         }
-
-        public H
     }
 }
