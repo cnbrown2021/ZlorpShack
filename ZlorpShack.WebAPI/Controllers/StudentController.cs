@@ -11,15 +11,12 @@ using ZlorpShack.Service;
 
 namespace ZlorpShack.WebAPI.Controllers
 {
-    /*
-    {
-        private readonly ApplicationDbContext _studentContent = new ApplicationDbContext();
+    /*{private readonly ApplicationDbContext _studentContent = new ApplicationDbContext();
     }*/
 
     [Authorize]
-
+    public class StudentController : ApiController
     //CRUD
-    public class NoteController : ApiController
     {
 
         private StudentService CreateStudentService()
