@@ -39,7 +39,7 @@ namespace ZlorpShack.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = 
+                var query =
                     ctx
                         .Awards
                         //.Where(e => e.OwnerId == _userId)
@@ -53,6 +53,58 @@ namespace ZlorpShack.Service
                                 }
                                );
                 return query.ToArray();
+            }
+
+        }
+        public AwardDetail GetAwardById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Awards
+                    .Single(e => e.AwardId == id);
+                return
+                    new AwardDetail
+                    {
+                        AwardId = entity.AwardId,
+                        AwardName = entity.AwardName,
+                        AwardTier = entity.AwardTier,
+                        AwardDescription = entity.AwardDescription
+                    };
+            }
+        }
+
+        public bool UpdateAward(AwardEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Awards
+                        .Single(e => e.AwardId == model.AwardId);
+
+                entity.AwardName = model.AwardName;
+                entity.AwardTier = model.AwardTier;
+                entity.AwardDescription = model.AwardDescription;
+
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
+
+        public bool DeleteAward(int awardId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Awards
+                        .Single(e => e.AwardId == awardId);
+
+                ctx.Awards.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }
