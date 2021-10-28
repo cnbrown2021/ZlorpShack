@@ -19,6 +19,7 @@ namespace ZlorpShack.Service
             _studentId = studentId;
         }
 
+        
         //Create
         public bool CreateStudent(StudentCreate profile)
         {
@@ -48,7 +49,6 @@ namespace ZlorpShack.Service
             using (var ctx = new ApplicationDbContext())
             {
                 var query = ctx.Students
-                    .Where(c => c.StudentId == _studentId)
                     .Select(c => new StudentList
                     {
                         StudentId = c.StudentId,
@@ -67,6 +67,24 @@ namespace ZlorpShack.Service
             using (var ctx = new ApplicationDbContext())
             {
                 var content = ctx.Students.Single(c => c.StudentId == id);
+
+                return new StudentDetail
+                {
+                    StudentId = content.StudentId,
+                    FirstName = content.FirstName,
+                    LastName = content.LastName,
+                    NumberOfBooksRead = content.NumberOfBooksRead,
+                    CurrentRewardTier = content.CurrentRewardTier
+                };
+            }
+        }
+
+        //GetbyName
+        public StudentDetail GetStudentByName(string name)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var content = ctx.Students.Single(c => c.LastName == name && c.FirstName == name);
 
                 return new StudentDetail
                 {
