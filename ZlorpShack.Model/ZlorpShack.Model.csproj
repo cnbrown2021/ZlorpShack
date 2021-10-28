@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -55,11 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AwardCreate.cs" />
+    <Compile Include="AwardDetail.cs" />
+    <Compile Include="AwardEdit.cs" />
+    <Compile Include="AwardListItems.cs" />
     <Compile Include="AwardEarnedCreate.cs" />
     <Compile Include="AwardEarnedDetail.cs" />
     <Compile Include="AwardEarnedEdit.cs" />
     <Compile Include="AwardEarnedList.cs" />
-    <Compile Include="AwardListItems.cs" />
     <Compile Include="BookCreate.cs" />
     <Compile Include="BookDetail.cs" />
     <Compile Include="BookEdit.cs" />

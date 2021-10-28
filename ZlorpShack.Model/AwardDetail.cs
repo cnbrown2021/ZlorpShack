@@ -8,17 +8,18 @@ using static ZlorpShack.Data.Award;
 
 namespace ZlorpShack.Model
 {
-    public class AwardListItems
+    public class AwardDetail
     {
+        [Key]
         public int AwardId { get; set; }
 
-        [Display(Name="First Prize")]
+        [Required]
         public string AwardName { get; set; }
-
-        [Display(Name="Award Tier")]
+        
+        [Required]
         public Tiers AwardTier { get; set; }
 
-        [Display(Name="Award Description")]
+        [Required]
         public string AwardDescription { get; set; }
     }
 }
