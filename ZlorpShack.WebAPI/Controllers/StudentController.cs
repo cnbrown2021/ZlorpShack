@@ -55,9 +55,9 @@ namespace ZlorpShack.WebAPI.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            //StudentService studentService = CreateStudentService();
-            //var student = studentService.GetStudent();
-            return Ok(_studentId.Students.ToList());
+            StudentService studentService = CreateStudentService();
+            var student = studentService.GetStudent();
+            return Ok(student);
         }
 
         [HttpGet]
