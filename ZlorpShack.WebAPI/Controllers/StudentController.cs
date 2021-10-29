@@ -18,7 +18,7 @@ namespace ZlorpShack.WebAPI.Controllers
     public class StudentController : ApiController
     //CRUD
     {
-        private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
+        //private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
         private StudentService CreateStudentService()
         {
             //var studentId = Guid.Parse(User.Identity.GetUserId());
