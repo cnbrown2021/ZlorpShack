@@ -11,17 +11,17 @@ namespace ZlorpShack.Service
     
     public class StudentService
     {
-        //private readonly int _studentId;
+        private readonly int _studentId;
         private readonly List<StudentList> _studentDirectory;
 
-        //public StudentService(int studentId)
-        //{
-          //  _studentId = studentId;
-        //}
+        public StudentService(int studentId)
+        {
+            _studentId = studentId;
+        }
 
-        //public StudentService()
-        //{
-        //}
+        public StudentService()
+        {
+        }
 
 
         //Create
@@ -29,7 +29,7 @@ namespace ZlorpShack.Service
         {
             var content = new Student()
             {
-                StudentId = profile.StudentId,
+                StudentId = _studentId,
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 NumberOfBooksRead = profile.NumberOfBooksRead
@@ -118,11 +118,11 @@ namespace ZlorpShack.Service
         }
        
         //Delete
-        public bool DeleteStudent(int studentId)
+        public bool DeleteStudent(int _studentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var content = ctx.Students.Single(c => c.StudentId == studentId);
+                var content = ctx.Students.Single(c => c.StudentId == _studentId);
                 ctx.Students.Remove(content);
                 return ctx.SaveChanges() == 1;
 
@@ -130,3 +130,4 @@ namespace ZlorpShack.Service
         }
     }
 }
+
