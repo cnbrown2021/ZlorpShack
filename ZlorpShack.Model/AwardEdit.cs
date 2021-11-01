@@ -9,9 +9,9 @@ namespace ZlorpShack.Model
 {
     public class AwardEdit
     {
-        
+
         public int AwardId { get; set; }
-        
+
         public string AwardName { get; set; }
         
         public Tiers AwardTier { get; set; }
