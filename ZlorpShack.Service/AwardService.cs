@@ -47,6 +47,7 @@ namespace ZlorpShack.Service
                             e =>
                                 new AwardListItems
                                 {
+                                    AwardId = e.AwardId, //Added by Jesse
                                     AwardName = e.AwardName,
                                     AwardTier = e.AwardTier,
                                     AwardDescription = e.AwardDescription

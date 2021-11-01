@@ -17,5 +17,6 @@ namespace ZlorpShack.Model
         public string Genre { get; set; }
 
         public string Summary { get; set; }
+        public int StudentId { get; set; }
     }
 }

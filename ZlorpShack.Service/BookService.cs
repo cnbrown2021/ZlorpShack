@@ -17,7 +17,8 @@ namespace ZlorpShack.Service
                 Title = book.Title,
                 Author = book.Author,
                 Genre = book.Genre,
-                Summary = book.Summary
+                Summary = book.Summary,
+                StudentId = book.StudentId
             };
             
             using(var ctx = new ApplicationDbContext())

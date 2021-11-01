@@ -32,6 +32,8 @@ namespace ZlorpShack.Data
         public int CurrentRewardTier { get; set; }
 
         //Navigation Property
+        public virtual List<Book> Books { get; set; } = new List<Book>();
+
         //public virtual Book Book { get; set; }
 
 
