@@ -92,6 +92,10 @@
     <Compile Include="Migrations\202110281330557_InitialMigration.Designer.cs">
       <DependentUpon>202110281330557_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110291444226_hopethisworks.cs" />
+    <Compile Include="Migrations\202110291444226_hopethisworks.Designer.cs">
+      <DependentUpon>202110291444226_hopethisworks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
@@ -103,6 +107,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202110281330557_InitialMigration.resx">
       <DependentUpon>202110281330557_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110291444226_hopethisworks.resx">
+      <DependentUpon>202110291444226_hopethisworks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
