@@ -12,7 +12,7 @@ namespace ZlorpShack.Service
     public class StudentService
     {
         //private readonly int _studentId;
-        private readonly List<StudentList> _studentDirectory;
+        //private readonly List<StudentList> _studentDirectory;
 
         //public StudentService(int studentId)
         //{
@@ -42,10 +42,10 @@ namespace ZlorpShack.Service
         }
 
         //Get
-        public List<StudentList> GetList()
-        {
-            return _studentDirectory;
-        }
+        //public List<StudentList> GetList()
+        //{
+        //    return _studentDirectory;
+        //}
 
         //Get
         public IEnumerable<StudentList> GetStudent()
@@ -56,7 +56,9 @@ namespace ZlorpShack.Service
                     .Select(c => new StudentList
                     {
                         StudentId = c.StudentId,
-                        FullName = c.FullName,
+                        FirstName = c.FirstName,
+                        LastName = c.LastName,
+                        //FullName = c.FullName, wasn't working
                         NumberOfBooksRead = c.NumberOfBooksRead,
                         CurrentRewardTier = c.NumberOfBooksRead
                     });
@@ -84,7 +86,7 @@ namespace ZlorpShack.Service
         }
 
         //GetbyName
-        public StudentDetail GetStudentByName(string name)
+        public StudentDetail GetStudentByName(string name) //Maybe do by first or last name
         {
             using (var ctx = new ApplicationDbContext())
             {
