@@ -18,7 +18,7 @@ namespace ZlorpShack.WebAPI.Controllers
         //private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
         private StudentService CreateStudentService()
         {
-            int studentId = int.Parse(User.Identity.GetUserId());
+            //int studentId = int.Parse(User.Identity.GetUserId());
             StudentService studentService = new StudentService();
             return studentService;
         }

@@ -11,18 +11,15 @@ namespace ZlorpShack.Service
     
     public class StudentService
     {
-<<<<<<< HEAD
-        private readonly int _studentId;
-        private readonly List<StudentList> _studentDirectory;
-=======
+
         //private readonly int _studentId;
         //private readonly List<StudentList> _studentDirectory;
->>>>>>> 7db9902fd9ce2e24420c8d0f771703c66245ea4f
 
-        public StudentService(int studentId)
-        {
-            _studentId = studentId;
-        }
+
+        //public StudentService(int studentId)
+        //{
+          //  _studentId = studentId;
+        //}
 
         //public StudentService()
         //{
@@ -34,7 +31,7 @@ namespace ZlorpShack.Service
         {
             var content = new Student()
             {
-                StudentId = _studentId,
+                StudentId = profile.StudentId,
                 FirstName = profile.FirstName,
                 LastName = profile.LastName,
                 NumberOfBooksRead = profile.NumberOfBooksRead
@@ -95,7 +92,7 @@ namespace ZlorpShack.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var content = ctx.Students.Single(c => c.LastName == name && c.FirstName == name);
+                var content = ctx.Students.Single(c => c.LastName == name);
 
                 return new StudentDetail
                 {
