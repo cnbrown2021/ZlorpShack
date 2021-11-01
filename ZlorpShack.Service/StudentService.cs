@@ -11,21 +11,6 @@ namespace ZlorpShack.Service
     
     public class StudentService
     {
-
-        //private readonly int _studentId;
-        //private readonly List<StudentList> _studentDirectory;
-
-
-        //public StudentService(int studentId)
-        //{
-          //  _studentId = studentId;
-        //}
-
-        //public StudentService()
-        //{
-        //}
-
-
         //Create
         public bool CreateStudent(StudentCreate profile)
         {
@@ -42,13 +27,6 @@ namespace ZlorpShack.Service
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        //Get
-        //public List<StudentList> GetList()
-        //{
-        //    return _studentDirectory;
-        //}
-
         //Get
         public IEnumerable<StudentList> GetStudent()
         {
@@ -58,11 +36,8 @@ namespace ZlorpShack.Service
                     .Select(c => new StudentList
                     {
                         StudentId = c.StudentId,
-                        FirstName = c.FirstName,
-                        LastName = c.LastName,
-                        //FullName = c.FullName, wasn't working
+                        FullName = c.FirstName + " " + c.LastName,
                         NumberOfBooksRead = c.NumberOfBooksRead,
-                        CurrentRewardTier = c.NumberOfBooksRead
                     });
                    
                 return query.ToArray();
@@ -82,13 +57,12 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    CurrentRewardTier = content.CurrentRewardTier
                 };
             }
         }
 
         //GetbyName
-        public StudentDetail GetStudentByName(string name) //Maybe do by first or last name
+        public StudentDetail GetStudentByName(string name)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -100,7 +74,6 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    CurrentRewardTier = content.CurrentRewardTier
                 };
             }
         }

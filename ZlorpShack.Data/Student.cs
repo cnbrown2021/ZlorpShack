@@ -23,13 +23,28 @@ namespace ZlorpShack.Data
                 return FirstName + " " + LastName;
             }
         }
-        
-        public int Age { get; set; }
-       
-        public int Grade { get; set; }
+
         [Required]
         public int NumberOfBooksRead { get; set; }
-        public int CurrentRewardTier { get; set; }
+        public int CurrentRewardTier
+        {
+            get
+            {
+                if (NumberOfBooksRead >= 1 && NumberOfBooksRead < 3)
+                    return (int)Award.Tiers.TierOne;
+                if (NumberOfBooksRead >= 3 && NumberOfBooksRead < 5)
+                    return (int)Award.Tiers.TierTwo;
+                if (NumberOfBooksRead >= 5 && NumberOfBooksRead < 8)
+                    return (int)Award.Tiers.TierThree;
+                if (NumberOfBooksRead >= 8 && NumberOfBooksRead < 13)
+                    return (int)Award.Tiers.TierFour;
+                if (NumberOfBooksRead >= 13)
+                    return (int)Award.Tiers.TierFive;
+                else
+                    return 0;
+
+            }
+        }
 
         //Navigation Property
         public virtual List<Book> Books { get; set; } = new List<Book>();
