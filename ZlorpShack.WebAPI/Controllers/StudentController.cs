@@ -45,7 +45,7 @@ namespace ZlorpShack.WebAPI.Controllers
             //{
               //  return Ok($"{student.FirstName} was added.");
             //}
-            //return InternalServerError();
+            //return InternalServerErr
 
             return Ok();
 
