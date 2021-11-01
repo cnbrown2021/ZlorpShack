@@ -19,9 +19,9 @@ namespace ZlorpShack.Service
             _studentId = studentId;
         }
 
-        public StudentService()
-        {
-        }
+        //public StudentService()
+        //{
+        //}
 
 
         //Create
