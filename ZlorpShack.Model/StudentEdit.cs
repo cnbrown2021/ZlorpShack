@@ -13,5 +13,6 @@ namespace ZlorpShack.Model
         public string LastName { get; set; }
         public int NumberOfBooksRead { get; set; }
 
+
     }
 }

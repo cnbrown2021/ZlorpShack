@@ -22,10 +22,7 @@ namespace ZlorpShack.Model
 
         public string Summary { get; set; }
 
-        [ForeignKey(nameof(Student))]
-        public int StudentID { get; set; }
-
         ////Navigation Property
-        public virtual Student Student { get; set; }
+        public virtual List<Student> Student { get; set; } = new List<Student>();
     }
 }
