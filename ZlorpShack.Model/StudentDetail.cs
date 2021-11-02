@@ -32,6 +32,22 @@ namespace ZlorpShack.Model
 
             }
         }
+        public string BooksRead
+        {
+            get
+            {
+                string masterString = "";
+
+                if(Books.Count == 0)
+                    return ("no book");
+
+                foreach (var book in Books)
+                    masterString += book.Title + ", ";
+
+                return masterString;
+            }
+        }
+        public virtual List<Book> Books { get; set; } = new List<Book>();
 
 
     }

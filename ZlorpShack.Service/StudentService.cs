@@ -27,6 +27,17 @@ namespace ZlorpShack.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool AddBookToStudentList(int studentId, int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var student = ctx.Students.Single(c => c.StudentId == studentId);
+                var book = ctx.Books.Single(b => b.BookID == bookId);
+                student.Books.Add(book);
+                
+                return ctx.SaveChanges() == 1;
+            }
+        }
         //Get
         public IEnumerable<StudentList> GetStudent()
         {
@@ -57,6 +68,8 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
+                    BooksRead = content.BooksRead
+                    //Books = content.Books.Select(e => new Book { Title = e.Title }).ToList()
                 };
             }
         }

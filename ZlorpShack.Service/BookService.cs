@@ -70,6 +70,7 @@ namespace ZlorpShack.Service
                 entity.Author = book.Author;
                 entity.Genre = book.Genre;
                 entity.Summary = book.Summary;
+                entity.StudentId = book.StudentId;
 
                 return ctx.SaveChanges() == 1;
             }
