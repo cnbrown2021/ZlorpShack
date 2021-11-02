@@ -90,6 +90,10 @@ namespace ZlorpShack.WebAPI.Controllers
 
             return Ok();
         }
+        //public IHttpActionResult Put(int id, int bookid)
+        //{
+
+        //}
 
         [HttpDelete]
         public IHttpActionResult Delete(int id)

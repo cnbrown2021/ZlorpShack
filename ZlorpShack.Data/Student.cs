@@ -46,11 +46,24 @@ namespace ZlorpShack.Data
             }
         }
 
+        public string BooksRead 
+        { 
+            get
+            {
+                string masterString = "";
+
+                if (Books.Count == 0)
+                    return ("no book");
+
+                foreach (var book in Books)
+                    masterString += book.Title + ", ";
+
+                return masterString;
+            }
+        }
+
         //Navigation Property
         public virtual List<Book> Books { get; set; } = new List<Book>();
-
-        //public virtual Book Book { get; set; }
-
 
     }
 }

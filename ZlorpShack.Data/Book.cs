@@ -25,6 +25,6 @@ namespace ZlorpShack.Data
         public int? StudentId { get; set; }
 
         //Navigation Property
-        public virtual List<Student> Student { get; set; } = new List<Student>();
+        public virtual Student Student { get; set; }
     }
 }
