@@ -96,6 +96,18 @@
     <Compile Include="Migrations\202110291444226_hopethisworks.Designer.cs">
       <DependentUpon>202110291444226_hopethisworks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111011801134_Getter.cs" />
+    <Compile Include="Migrations\202111011801134_Getter.Designer.cs">
+      <DependentUpon>202111011801134_Getter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111012038585_nullable.cs" />
+    <Compile Include="Migrations\202111012038585_nullable.Designer.cs">
+      <DependentUpon>202111012038585_nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111021310247_notsurewhy.cs" />
+    <Compile Include="Migrations\202111021310247_notsurewhy.Designer.cs">
+      <DependentUpon>202111021310247_notsurewhy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
@@ -110,6 +122,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110291444226_hopethisworks.resx">
       <DependentUpon>202110291444226_hopethisworks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111011801134_Getter.resx">
+      <DependentUpon>202111011801134_Getter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111012038585_nullable.resx">
+      <DependentUpon>202111012038585_nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111021310247_notsurewhy.resx">
+      <DependentUpon>202111021310247_notsurewhy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
