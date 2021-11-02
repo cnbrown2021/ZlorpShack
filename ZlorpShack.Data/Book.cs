@@ -26,5 +26,7 @@ namespace ZlorpShack.Data
 
         //Navigation Property
         public virtual Student Student { get; set; }
+
+        //?
     }
 }
