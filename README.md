@@ -19,6 +19,8 @@ Teachers will log their student's book into the app and the system will keep tra
 
 ## Installation
 
+[Download Here](https://github.com/cnbrown2021/ZlorpShack/archive/refs/heads/master.zip)
+
 ## Usage
 
 Instructions for teachers:
