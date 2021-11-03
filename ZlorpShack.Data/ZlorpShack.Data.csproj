@@ -112,6 +112,10 @@
     <Compile Include="Migrations\202111021554402_booksread.Designer.cs">
       <DependentUpon>202111021554402_booksread.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111031451559_Trials.cs" />
+    <Compile Include="Migrations\202111031451559_Trials.Designer.cs">
+      <DependentUpon>202111031451559_Trials.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111021554402_booksread.resx">
       <DependentUpon>202111021554402_booksread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111031451559_Trials.resx">
+      <DependentUpon>202111031451559_Trials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

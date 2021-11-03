@@ -61,9 +61,25 @@ namespace ZlorpShack.Data
                 return masterString;
             }
         }
+        public string AwardsEarned
+        {
+            get
+            {
+                string masterString = "";
+
+                if (Awards.Count == 0)
+                    return ("no awards");
+
+                foreach (var award in Awards)
+                    masterString += award.AwardName + ", ";
+
+                return masterString;
+            }
+        }
 
         //Navigation Property
         public virtual List<Book> Books { get; set; } = new List<Book>();
+        public virtual List<Award> Awards { get; set; } = new List<Award>();
 
     }
 }
