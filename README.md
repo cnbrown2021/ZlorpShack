@@ -10,7 +10,7 @@ Teachers will log their student's book into the app and the system will keep tra
 
 ## Contributors
 
-..* Jesse Southerland
+ * Jesse Southerland
   
 Ciara Brown
   
