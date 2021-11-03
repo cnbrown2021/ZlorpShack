@@ -8,9 +8,9 @@ Teachers will log their student's book into the app and the system will keep tra
 
 ---
 
-##Contributors
+## Contributors
 
-Jesse Southerland
+..* Jesse Southerland
   
 Ciara Brown
   
@@ -18,13 +18,13 @@ Jordan Bowling
 
 ---
 
-##Company Sponsor
+## Company Sponsor
 
 Zlorp Shack, LLC
 
 ---
 
-##Project-Related Links
+## Project-Related Links
 
 [Planning Documentation](https://docs.google.com/document/d/12o8-2W4Qsp2XJ8uqeXxJztZ0m_LuNBIe9tTrxSnUgZ4/edit?usp=sharing)
 
