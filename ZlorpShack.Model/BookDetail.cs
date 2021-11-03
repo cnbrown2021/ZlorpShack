@@ -22,7 +22,5 @@ namespace ZlorpShack.Model
 
         public string Summary { get; set; }
 
-        ////Navigation Property
-        public virtual List<Student> Student { get; set; } = new List<Student>();
     }
 }
