@@ -26,8 +26,10 @@ Zlorp Shack, LLC
 
 ##Project-Related Links
 
-[Project Plan Chart](https://miro.com/app/board/o9J_lofkAVU=/)
+[Planning Documentation](https://docs.google.com/document/d/12o8-2W4Qsp2XJ8uqeXxJztZ0m_LuNBIe9tTrxSnUgZ4/edit?usp=sharing)
+
+[Project Chart](https://miro.com/app/board/o9J_lofkAVU=/)
 
 [Work-Load Board](https://trello.com/invite/b/x2oUty9K/a9863da54df56e5656ed355632180a0a/zlorp-shack-reading-program)
 
-[Planning Documentation](https://docs.google.com/document/d/12o8-2W4Qsp2XJ8uqeXxJztZ0m_LuNBIe9tTrxSnUgZ4/edit?usp=sharing)
+___
