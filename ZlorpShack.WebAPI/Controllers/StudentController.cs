@@ -74,6 +74,18 @@ namespace ZlorpShack.WebAPI.Controllers
             return Ok(student);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetByBookId(int bookId)
+        {
+            StudentService studentService = CreateStudentService();
+            var student = studentService.GetStudentByBookId(bookId);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
+        }
+
         [HttpPut]
         public IHttpActionResult Put(StudentEdit student)
         {

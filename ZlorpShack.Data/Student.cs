@@ -80,6 +80,7 @@ namespace ZlorpShack.Data
         //Navigation Property
         public virtual List<Book> Books { get; set; } = new List<Book>();
         public virtual List<Award> Awards { get; set; } = new List<Award>();
+        
 
     }
 }
