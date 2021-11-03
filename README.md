@@ -10,17 +10,17 @@ Teachers will log their student's book into the app and the system will keep tra
 
 ## Contributors
 
- * Jesse Southerland
+  * Jesse Southerland
   
-Ciara Brown
+  * Ciara Brown
   
-Jordan Bowling
+  * Jordan Bowling
 
 ---
 
 ## Company Sponsor
 
-Zlorp Shack, LLC
+  * Zlorp Shack, LLC
 
 ---
 
