@@ -5,6 +5,33 @@
 This app is for teachers tracking their students' reading progress and it serves as an award system for the students.
 Teachers will log their student's book into the app and the system will keep track of the number of books and awards that the student can qualify for.
 
+---
+
+### Table of Contents
+
+1. Installation
+2. Usage
+3. Contributors
+4. Company Sponsor
+5. Project-Related Links
+
+---
+
+## Installation
+
+## Usage
+
+Instructions for teachers:
+
+Create a user account with email and password.
+
+Log in students and the books that they have read.
+
+Update the student's profile when a book is completed.
+
+Monitor the awards that they can qualify for.
+
+Enjoy!
 
 ---
 
