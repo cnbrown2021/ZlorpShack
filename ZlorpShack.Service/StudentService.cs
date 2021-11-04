@@ -93,6 +93,30 @@ namespace ZlorpShack.Service
             }
         }
 
+        public IEnumerable<StudentList> GetStudentByBookId (int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var studentsBooks = ctx.StudentsBooks
+                        .Where(sb => sb.BookId == bookId);
+
+                List<StudentList> results = new List<StudentList>();
+                Student studentToAdd = new Student();
+                foreach(var studentBook in studentsBooks)
+                {
+                    studentToAdd = studentBook.StudentNavigation;
+                    results.Add(new StudentList
+                    {
+                        StudentId = studentToAdd.StudentId,
+                        FullName = studentToAdd.FullName,
+                        NumberOfBooksRead = studentToAdd.NumberOfBooksRead
+
+                    });
+                }
+                return results;
+            }
+        }
+
         //Update
         public bool UpdateStudent(StudentEdit profile)
         {

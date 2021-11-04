@@ -116,9 +116,18 @@
     <Compile Include="Migrations\202111031451559_Trials.Designer.cs">
       <DependentUpon>202111031451559_Trials.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111031957058_StudentBooks.cs" />
+    <Compile Include="Migrations\202111031957058_StudentBooks.Designer.cs">
+      <DependentUpon>202111031957058_StudentBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111032035303_StudentBooksIDAdd.cs" />
+    <Compile Include="Migrations\202111032035303_StudentBooksIDAdd.Designer.cs">
+      <DependentUpon>202111032035303_StudentBooksIDAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StudentBooks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -145,6 +154,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111031451559_Trials.resx">
       <DependentUpon>202111031451559_Trials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111031957058_StudentBooks.resx">
+      <DependentUpon>202111031957058_StudentBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111032035303_StudentBooksIDAdd.resx">
+      <DependentUpon>202111032035303_StudentBooksIDAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
