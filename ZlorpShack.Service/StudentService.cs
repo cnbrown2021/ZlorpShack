@@ -68,8 +68,8 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    Books = content.Books.Select(e => new Book { Title = e.Title }).ToList(),
-                    Awards = content.Awards.Select(b => new Award { AwardName = b.AwardName }).ToList()
+                    
+                    //Books = content.Books.Select(e => new Book { Title = e.Title }).ToList()
                 };
             }
         }
@@ -87,8 +87,6 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    Books = content.Books.Select(e => new Book { Title = e.Title }).ToList(),
-                    Awards = content.Awards.Select(b => new Award { AwardName = b.AwardName }).ToList()
                 };
             }
         }
