@@ -47,6 +47,7 @@ namespace ZlorpShack.Service
                             e =>
                                 new AwardListItems
                                 {
+                                    AwardId = e.AwardId, //Added by Jesse
                                     AwardName = e.AwardName,
                                     AwardTier = e.AwardTier,
                                     AwardDescription = e.AwardDescription
@@ -87,6 +88,7 @@ namespace ZlorpShack.Service
                 entity.AwardName = model.AwardName;
                 entity.AwardTier = model.AwardTier;
                 entity.AwardDescription = model.AwardDescription;
+                entity.StudentId = model.StudentId;
 
                 return ctx.SaveChanges() == 1;
             }

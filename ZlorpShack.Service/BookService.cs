@@ -17,7 +17,7 @@ namespace ZlorpShack.Service
                 Title = book.Title,
                 Author = book.Author,
                 Genre = book.Genre,
-                Summary = book.Summary
+                Summary = book.Summary,
             };
             
             using(var ctx = new ApplicationDbContext())
@@ -70,6 +70,7 @@ namespace ZlorpShack.Service
                 entity.Author = book.Author;
                 entity.Genre = book.Genre;
                 entity.Summary = book.Summary;
+                entity.StudentId = book.StudentId;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -16,7 +16,8 @@ namespace ZlorpShack.Service
             {
                 DateEarned = ae.DateEarned,
                 DateClaimed = ae.DateClaimed,
-                StudentId = ae.StudentId
+                StudentId = ae.StudentId,
+                AwardId = ae.AwardId
             };
 
             using(var ctx = new ApplicationDbContext())
@@ -35,7 +36,8 @@ namespace ZlorpShack.Service
                     AwardEarnedId = e.AwardEarnedId,
                     DateEarned = e.DateEarned,
                     DateClaimed = e.DateClaimed,
-                    StudentId = e.StudentId
+                    StudentId = e.StudentId,
+                    AwardId = e.AwardId
                 }
                 );
                 return query.ToArray();

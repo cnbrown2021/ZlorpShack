@@ -11,19 +11,6 @@ namespace ZlorpShack.Service
     
     public class StudentService
     {
-        //private readonly int _studentId;
-        private readonly List<StudentList> _studentDirectory;
-
-        //public StudentService(int studentId)
-        //{
-          //  _studentId = studentId;
-        //}
-
-        //public StudentService()
-        //{
-        //}
-
-
         //Create
         public bool CreateStudent(StudentCreate profile)
         {
@@ -40,13 +27,17 @@ namespace ZlorpShack.Service
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        //Get
-        public List<StudentList> GetList()
+        public bool AddBookToStudentList(int studentId, int bookId)
         {
-            return _studentDirectory;
+            using (var ctx = new ApplicationDbContext())
+            {
+                var student = ctx.Students.Single(c => c.StudentId == studentId);
+                var book = ctx.Books.Single(b => b.BookID == bookId);
+                student.Books.Add(book);
+                
+                return ctx.SaveChanges() == 1;
+            }
         }
-
         //Get
         public IEnumerable<StudentList> GetStudent()
         {
@@ -56,9 +47,8 @@ namespace ZlorpShack.Service
                     .Select(c => new StudentList
                     {
                         StudentId = c.StudentId,
-                        FullName = c.FullName,
+                        FullName = c.FirstName + " " + c.LastName,
                         NumberOfBooksRead = c.NumberOfBooksRead,
-                        CurrentRewardTier = c.NumberOfBooksRead
                     });
                    
                 return query.ToArray();
@@ -78,7 +68,8 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    CurrentRewardTier = content.CurrentRewardTier
+                    Books = content.Books.Select(e => new Book { Title = e.Title }).ToList(),
+                    Awards = content.Awards.Select(b => new Award { AwardName = b.AwardName }).ToList()
                 };
             }
         }
@@ -88,7 +79,7 @@ namespace ZlorpShack.Service
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var content = ctx.Students.Single(c => c.LastName == name && c.FirstName == name);
+                var content = ctx.Students.Single(c => c.LastName == name);
 
                 return new StudentDetail
                 {
@@ -96,8 +87,33 @@ namespace ZlorpShack.Service
                     FirstName = content.FirstName,
                     LastName = content.LastName,
                     NumberOfBooksRead = content.NumberOfBooksRead,
-                    CurrentRewardTier = content.CurrentRewardTier
+                    Books = content.Books.Select(e => new Book { Title = e.Title }).ToList(),
+                    Awards = content.Awards.Select(b => new Award { AwardName = b.AwardName }).ToList()
                 };
+            }
+        }
+
+        public IEnumerable<StudentList> GetStudentByBookId (int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var studentsBooks = ctx.StudentsBooks
+                        .Where(sb => sb.BookId == bookId);
+
+                List<StudentList> results = new List<StudentList>();
+                Student studentToAdd = new Student();
+                foreach(var studentBook in studentsBooks)
+                {
+                    studentToAdd = studentBook.StudentNavigation;
+                    results.Add(new StudentList
+                    {
+                        StudentId = studentToAdd.StudentId,
+                        FullName = studentToAdd.FullName,
+                        NumberOfBooksRead = studentToAdd.NumberOfBooksRead
+
+                    });
+                }
+                return results;
             }
         }
 
@@ -118,11 +134,11 @@ namespace ZlorpShack.Service
         }
        
         //Delete
-        public bool DeleteStudent(int studentId)
+        public bool DeleteStudent(int _studentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var content = ctx.Students.Single(c => c.StudentId == studentId);
+                var content = ctx.Students.Single(c => c.StudentId == _studentId);
                 ctx.Students.Remove(content);
                 return ctx.SaveChanges() == 1;
 
@@ -130,3 +146,4 @@ namespace ZlorpShack.Service
         }
     }
 }
+

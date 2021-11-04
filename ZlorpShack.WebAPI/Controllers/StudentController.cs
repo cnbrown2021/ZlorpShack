@@ -11,17 +11,14 @@ using ZlorpShack.Service;
 
 namespace ZlorpShack.WebAPI.Controllers
 {
-    /*{private readonly ApplicationDbContext _studentContent = new ApplicationDbContext();
-    }*/
-
     [Authorize]
     public class StudentController : ApiController
     //CRUD
     {
-        private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
+        //private readonly ApplicationDbContext _studentId = new ApplicationDbContext();
         private StudentService CreateStudentService()
         {
-            //var studentId = Guid.Parse(User.Identity.GetUserId());
+            //int studentId = int.Parse(User.Identity.GetUserId());
             StudentService studentService = new StudentService();
             return studentService;
         }
@@ -39,13 +36,6 @@ namespace ZlorpShack.WebAPI.Controllers
 
             if (!service.CreateStudent(student))
             return InternalServerError();
-
-            //_studentId.Students.Add(student);
-            //if(_studentId.SaveChanges() == 1)
-            //{
-              //  return Ok($"{student.FirstName} was added.");
-            //}
-            //return InternalServerError();
 
             return Ok();
 
@@ -84,6 +74,18 @@ namespace ZlorpShack.WebAPI.Controllers
             return Ok(student);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetByBookId(int bookId)
+        {
+            StudentService studentService = CreateStudentService();
+            var student = studentService.GetStudentByBookId(bookId);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return Ok(student);
+        }
+
         [HttpPut]
         public IHttpActionResult Put(StudentEdit student)
         {
@@ -100,6 +102,10 @@ namespace ZlorpShack.WebAPI.Controllers
 
             return Ok();
         }
+        //public IHttpActionResult Put(int id, int bookid)
+        //{
+
+        //}
 
         [HttpDelete]
         public IHttpActionResult Delete(int id)

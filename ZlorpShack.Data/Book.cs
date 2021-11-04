@@ -22,7 +22,7 @@ namespace ZlorpShack.Data
         public string Summary { get; set; }
 
         [ForeignKey(nameof(Student))]
-        public int StudentId { get; set; }
+        public int? StudentId { get; set; }
 
         //Navigation Property
         public virtual Student Student { get; set; }
